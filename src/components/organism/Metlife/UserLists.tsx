@@ -1,38 +1,22 @@
 import { Pagination, ReusableTable } from "@/components/molecules";
-import { IAllAppoinmentdata } from "@/libs/api/interface/assuarace";
+import { IAllAppointmentData } from "@/libs/api/interface/assuarace";
 import { FC, useState } from "react";
 import { UserListTableRow } from "./UserListTableRow";
 
 interface PropsType {
-  data: IAllAppoinmentdata | null;
+  data: IAllAppointmentData | null;
   loading: boolean;
   updateData: () => Promise<void>;
 }
 
 const ClientTableHeader: string[] = [
   "SN",
-  "Bank Name",
-  "Agent Code",
-  "Policy No.",
+  "Employee ID",
   "Name",
-  "Phone No.",
-  "Gender",
-  "Address",
-  "Applicant's Medical",
-  "Required Medical",
-  "Medical Schedule Date",
-  "Required Lab test",
-  "Lab Test Name",
-  "Lab Test Schedule Date",
-  "Diagnostic Center Info",
-  "Medical Status",
-  "Lab Test Status",
-  "User Screen Shot",
-  "Medical Asses. Scan",
-  "Diagnostic Report",
-  "Overall Status",
-  "Comments",
-  "Action",
+  "Department",
+  " Complaints",
+  " Medicine name",
+  "Qty",
 ];
 
 // export const UserLists: FC<PropsType> = ({ data, loading, updateData }) => {

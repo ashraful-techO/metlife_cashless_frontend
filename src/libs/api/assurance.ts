@@ -2,30 +2,36 @@ import { updateURLSearchParams } from "@/utils/helpers/url.helpers";
 import { ParsedUrlQuery } from "querystring";
 import { BaseAPI } from "./baseAPI";
 import { BR } from "./interface";
-import { IAllAppoinmentdata, IAuth, IPolicyResponse, SignInPayload, UserData } from "./interface/assuarace";
+import {
+  IAllAppointmentData,
+  IAuth,
+  IPolicyResponse,
+  SignInPayload,
+  UserData,
+} from "./interface/assuarace";
 
 class AssuranceAPI extends BaseAPI {
   constructor(baseURL: string) {
     super(baseURL);
   }
 
-  getAppoinmentData = (query: ParsedUrlQuery) => {
+  getAppointmentData = (query: ParsedUrlQuery) => {
     let optionalParams: any = {};
     if (!query?.page) optionalParams["page"] = "1";
     const params = updateURLSearchParams(query, optionalParams);
 
-    return this.get<BR<IAllAppoinmentdata>>(`appointments?${params}`);
+    return this.get<BR<IAllAppointmentData>>(`appointments?${params}`);
   };
 
   updateAppoinmnetList = (id: string, payload: any) => {
-    return this.patch<BR<IAllAppoinmentdata>>(`appointments/${id}`, payload);
+    return this.patch<BR<IAllAppointmentData>>(`appointments/${id}`, payload);
   };
 
   updateMedicalStatus = (id: string, payload: any) => {
-    return this.patch<BR<IAllAppoinmentdata>>(`appointments/${id}`, payload);
+    return this.patch<BR<IAllAppointmentData>>(`appointments/${id}`, payload);
   };
   uploadDocuments = (id: string, payload: any) => {
-    return this.patch<BR<IAllAppoinmentdata>>(`appointments/${id}`, payload);
+    return this.patch<BR<IAllAppointmentData>>(`appointments/${id}`, payload);
   };
   addBancassurance = (payload: any) => {
     return this.post<BR<IPolicyResponse>>(`appointments`, payload);
@@ -38,7 +44,7 @@ class AssuranceAPI extends BaseAPI {
     );
   };
   sendSms = (id: string) => {
-    return this.get<BR<IAllAppoinmentdata>>(
+    return this.get<BR<IAllAppointmentData>>(
       `appointments/send-sms-for-appointment/${id}`
     );
   };
@@ -59,4 +65,6 @@ class AssuranceAPI extends BaseAPI {
   };
 }
 
-export const assuranceAPI = new AssuranceAPI(process.env.METLIFE_CASHLESS_SERVICE as string);
+export const assuranceAPI = new AssuranceAPI(
+  process.env.METLIFE_CASHLESS_SERVICE as string
+);

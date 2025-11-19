@@ -1,11 +1,11 @@
 "use client";
 import { Pagination, ReusableTable } from "@/components/molecules";
-import { IAllAppoinmentdata } from "@/libs/api/interface/assuarace";
+import { IAllAppointmentData } from "@/libs/api/interface/assuarace";
 import { FC } from "react";
 import { AppoinmentTableRow } from "./AppoinmentTableRow";
 
 interface PropsType {
-  data: IAllAppoinmentdata | null;
+  data: IAllAppointmentData | null;
   loading: boolean;
   setSelectData: any;
 }

@@ -1,4 +1,4 @@
-// export interface IAllAppoinmentdata {
+// export interface IAllAppointmentData {
 //   success: boolean;
 //   data: {
 //     items: AppointmentData[];
@@ -10,7 +10,7 @@
 //   message: string | null;
 // }
 
-export interface IAllAppoinmentdata {
+export interface IAllAppointmentData {
   items: AppointmentData[];
   nextPage: number | null;
   total: number;
